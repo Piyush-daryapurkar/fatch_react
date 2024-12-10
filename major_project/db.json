@@ -1,0 +1,31 @@
+{
+    "data":[
+        {
+            "id":12,
+            "name":"ankur",
+            "email":"ankur@gmail.com",
+            "password":1234
+        },
+        {
+            "id":123,
+            "name":"anguri",
+            "email":"anguri@gmail.com",
+            "password":1234
+        },
+        {
+            "id":124,
+            "name":"animaction",
+            "email":"ankanimactionur@gmail.com",
+            "password":1234
+        }
+
+    ],
+    "user_data1":[
+        {
+            "id":124,
+            "name":"animaction",
+            "email":"ankanimactionur@gmail.com",
+            "password":1234
+        }
+    ]
+}
