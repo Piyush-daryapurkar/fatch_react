@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
-import { getuser,adduser } from './api/userService';
+import { getuser,adduser, deleteuser } from './api/userService';
 
 
 const Admin = () => {
@@ -34,11 +34,20 @@ const Admin = () => {
         alert("data not inserted")
       }
     }
+    const handledelete=async(id)=>{
+      alert(id)
+      const deleteuser1=await deleteuser(id)
+      update_user_data(user_data.filter((user)=>user.id!==id))
+    }
+
+    localStorage.setItem("user_data",JSON.stringify(user_data))
+
+    
 
   return (
     <>
 
-    <table>
+    <table border={""}>
     <tr>
         <th>id</th>
         <th>name</th>
@@ -56,13 +65,14 @@ const Admin = () => {
                     <td>{item.email}</td>
                     <td>{item.password}</td>
                     <button><td>remove</td></button>
-                    <button><td>delete</td></button>
+                    <td><button onClick={()=>handledelete(item.id)}>delete</button></td>
                   </tr>
             ))
     }
     </table>
 
     <form action="">
+    
         <input type="text" value={name} onChange={(e)=>updatename(e.target.value)} /><br></br>
         <input type="text" value={email} onChange={(e)=>updateemail(e.target.value)} /><br></br>
         <input type="text" value={password} onChange={(e)=>updatepassword(e.target.value)} /><br></br>

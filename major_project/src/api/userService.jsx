@@ -12,3 +12,13 @@ export const adduser=async(user)=>{
     const response=await axios.post(API_URL,user)
     return response.data;
 }
+
+export const edituser=async(id)=>{
+    const response=await axios.put(`${API_URL}/${id},`,user);
+    return response.data;
+}
+
+export const deleteuser=async(id)=>{
+    const response=await axios.delete(`${API_URL}/${id}`);
+    return response.data 
+}
